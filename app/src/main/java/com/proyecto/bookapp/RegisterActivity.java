@@ -83,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         // Crear la solicitud POST para registrar al usuario
         RequestQueue queue = Volley.newRequestQueue(this, new CustomHurlStack());
-        String url = "http://www.rogerhuauya.com/server/auth/register";
+        String url = Constants.API_URL + "/auth/register";
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
