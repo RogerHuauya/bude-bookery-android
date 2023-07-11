@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Cola de solicitudes y se establece la URL del servidor donde se enviarán los datos de inicio de sesión
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://www.rogerhuauya.com/server/auth/login";
+        String url =  Constants.API_URL + "auth/login";
 
         // Crear una solicitud de tipo POST con la URL, los oyentes de respuesta y error
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
