@@ -57,7 +57,7 @@ public class RegisterBookActivity extends AppCompatActivity {
     private void submitBookData(final String title, final String author) {
         // Crear una cola de solicitudes y establecer la URL del servidor
         RequestQueue queue = Volley.newRequestQueue(this, new CustomHurlStack());  // Usar CustomHurlStack para gestionar las cookies
-        String url = "http://www.rogerhuauya.com/server/books";
+        String url = Constants.API_URL + "books";
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
