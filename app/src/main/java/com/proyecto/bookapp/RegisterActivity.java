@@ -86,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
         // CustomHurlStack es una nueva instancia. Es una clase personalizada que maneja las conexiones HTTP,
         // particularmente gestionando las cookies a través de las solicitudes y respuestas.
 
-        String url = "http://www.rogerhuauya.com/server/auth/register";
+        String url = Constants.API_URL + "auth/register";
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
