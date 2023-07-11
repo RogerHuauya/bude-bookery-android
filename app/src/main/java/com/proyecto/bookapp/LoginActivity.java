@@ -135,16 +135,18 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             protected Response<String> parseNetworkResponse(NetworkResponse response) {
-                // Captura la cookie
+                // Captura la cookie del encabezado "Set-Cookie" de la respuesta de la red.
                 String cookie = response.headers.get("Set-Cookie");
-
-                // Se guardan las cookies en las preferencias compartidas.
-                SharedPreferences sharedPreferences = getSharedPreferences("MyPref", 0); // 0 - for private mode
+                // Accede a las preferencias compartidas de la aplicación llamadas "MyPref" en modo privado (0).
+                SharedPreferences sharedPreferences = getSharedPreferences("MyPref", 0);
+                // Obtiene el editor de las preferencias compartidas para poder modificarlas.
                 SharedPreferences.Editor editor = sharedPreferences.edit();
+                // Agrega la cookie a las preferencias compartidas con la clave "cookie".
                 editor.putString("cookie", cookie);
+                // Aplica (guarda) los cambios hechos al editor de las preferencias compartidas.
                 editor.apply();
 
-                // Se llama al parseNetworkResponse original después de guardar la cookie.
+                // Llama al método original parseNetworkResponse de la superclase y devuelve su resultado.
                 return super.parseNetworkResponse(response);
             }
         };
