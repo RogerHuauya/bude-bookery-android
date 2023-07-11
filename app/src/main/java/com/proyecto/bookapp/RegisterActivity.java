@@ -83,7 +83,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         // Crear la solicitud POST para registrar al usuario
         RequestQueue queue = Volley.newRequestQueue(this, new CustomHurlStack());
-        String url = Constants.API_URL + "/auth/register";
+        // CustomHurlStack es una nueva instancia. Es una clase personalizada que maneja las conexiones HTTP,
+        // particularmente gestionando las cookies a través de las solicitudes y respuestas.
+
+        String url = "http://www.rogerhuauya.com/server/auth/register";
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
