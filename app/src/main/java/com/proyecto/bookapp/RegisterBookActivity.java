@@ -90,12 +90,17 @@ public class RegisterBookActivity extends AppCompatActivity {
             }
 
             @Override
+            // Sirve para personalizar los headers de una solicitud HTTP que se va a enviar a algún servidor
             public Map<String, String> getHeaders() throws AuthFailureError {
-                // Configurar las cabeceras para la solicitud
+                // Crea un nuevo mapa HashMap vacío. Este mapa tiene claves y valores String. Se va a usar para almacenar las cabeceras.
                 Map<String, String> headers = new HashMap<>();
+                // Accede a un almacenamiento de preferencias compartidas llamado "MyPref" que se va a usar para almacenar datos
                 SharedPreferences sharedPreferences = getSharedPreferences("MyPref", 0);
+                // Obtiene una cadena llamada "cookie" de las preferencias compartidas
                 String cookie = sharedPreferences.getString("cookie", "");
+                // Añade una cabecera a la solicitud
                 headers.put("Cookie", cookie);
+                // Añade una cabecera a la solicitud, la solicitud va a contener datos JSON y que esos datos están codificados en UTF-8
                 headers.put("Content-Type", "application/json; charset=utf-8");
                 return headers;
             }
