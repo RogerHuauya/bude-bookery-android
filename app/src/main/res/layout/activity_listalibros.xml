@@ -2,26 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_li">
+    android:background="@drawable/back05">
 
     <RelativeLayout
         android:layout_width="354dp"
         android:layout_height="701dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="19dp"
-        android:background="@drawable/shape_book"
-        android:orientation="vertical"
-        android:radius="8dp">
-
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_book">
         <TextView
             android:id="@+id/registerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="64dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:text="Libros Generales"
             android:textSize="30sp"
@@ -34,7 +26,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="75dp"
-            android:background="#FFF7E6">
+            android:background="#FAEED7">
 
             <LinearLayout
                 android:id="@+id/linearLayout"
