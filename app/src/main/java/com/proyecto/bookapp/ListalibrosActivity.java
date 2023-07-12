@@ -8,23 +8,16 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 //de aquí para abajo le añadí nuevos import'sxd
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
 import java.util.ArrayList;
 import java.util.List;
-import com.google.gson.JsonSyntaxException;
-import com.proyecto.bookapp.Book;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,7 +42,7 @@ public class ListalibrosActivity extends AppCompatActivity {
         progressDialog.show();
 
         RequestQueue queue = Volley.newRequestQueue(this, new CustomHurlStack());
-        String url = "http://www.rogerhuauya.com/server/books/all";
+        String url = Constants.API_URL+"books/all";
 
         JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
