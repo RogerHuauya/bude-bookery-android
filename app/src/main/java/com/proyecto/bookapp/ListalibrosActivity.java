@@ -35,15 +35,15 @@ public class ListalibrosActivity extends AppCompatActivity {
         LinearLayout linearLayout = findViewById(R.id.linearLayout);  // LinearLayout donde se mostrarán los libros
         getAllBooks();  // Llamada a la función que obtiene los libros de la API
 
-        // Creación y ejecución de un Handler para actualizar la lista de libros cada 60 segundos
+        // Creación y ejecución de un Handler para actualizar la lista de libros cada 30 segundos
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 getAllBooks();
-                handler.postDelayed(this, 60000);
+                handler.postDelayed(this, 30000);
             }
-        }, 60000);
+        }, 30000);
     }
 
     // Función que obtiene los libros de la API
